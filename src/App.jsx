@@ -1,7 +1,9 @@
 import FileUpload from "./pages/FileUpload";
 
 function App() {
-  return <FileUpload />;
+  return (
+    <FileUpload />
+  );
 }
 
 export default App;

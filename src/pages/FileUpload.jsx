@@ -43,8 +43,8 @@ function FileUpload() {
 
   return (
     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-      <div className="border p-8 rounded-2xl flex flex-col w-sm">
-        <h2 className="text-3xl break-words">ส่งการแจ้งไปยัง line และ telegram</h2>
+      <div className="border-3 shadow-lg shadow-cyan-500/50 border-blue-500 p-8 rounded-2xl flex flex-col w-sm bg-black">
+        <h2 className="text-3xl break-words text-white">ส่งการแจ้งไปยัง line และ telegram</h2>
         <input
           type="text"
           placeholder="ชื่อ"
