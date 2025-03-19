@@ -65,7 +65,7 @@ function FileUpload() {
         <button className="btn btn-primary" onClick={handleUpload}>
           Upload
         </button>
-        {message && <p className="mt-4 text-center">{message}</p>}
+        {message && <p className="mt-4 text-center text-white">{message}</p>}
       </div>
     </div>
   );
