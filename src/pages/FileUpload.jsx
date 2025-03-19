@@ -139,12 +139,7 @@ function FileUpload() {
               <img
                 src={imageUrl}
                 alt="Detected Objects"
-                className="mt-2 rounded-lg"
-                style={{
-                  width: "100%",
-                  maxHeight: "300px",
-                  objectFit: "contain",
-                }}
+                className="mt-2 rounded-lg max-h-[300px] w-full object-contain"
               />
             </div>
           )}
