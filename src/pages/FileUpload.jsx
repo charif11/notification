@@ -7,6 +7,7 @@ function FileUpload() {
   const [file, setFile] = useState(null);
   const [name, setName] = useState("");
   const [born, setBorn] = useState("");
+  const [api, setApi] = useState("api/charif");
   const [imageUrl, setImageUrl] = useState(""); // ✅ เพิ่ม state สำหรับ URL ของภาพผลลัพธ์
   const [detectedObjects, setDetectedObjects] = useState([]); // ✅ เพิ่ม state สำหรับผลลัพธ์ที่ตรวจจับได้
 
@@ -29,7 +30,7 @@ function FileUpload() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:1880/api/charif",
+        `http://127.0.0.1:1880/${api}`,
         formData,
         {
           headers: {
@@ -44,7 +45,7 @@ function FileUpload() {
       showToast("เกิดข้อผิดพลาดในการอัปโหลดไฟล์", "error");
       console.error("Upload Error:", error);
     }
-  }; 
+  };
 
   // const showToastInfo = (msg) => {
   //   toast.info(msg, {
@@ -67,7 +68,7 @@ function FileUpload() {
       draggable: true,
       progress: undefined,
     };
-  
+
     switch (type) {
       case "success":
         toast.success(msg, options);
@@ -82,7 +83,6 @@ function FileUpload() {
         toast(msg, options); // Default to basic toast if type is not provided
     }
   };
-  
 
   return (
     <div className="flex justify-center items-center flex-wrap gap-10 w-full h-screen">
@@ -102,6 +102,14 @@ function FileUpload() {
           placeholder="ปีเกิด(พ.ศ.)"
           className="input input-warning"
           onChange={(e) => setBorn(e.target.value)}
+        />
+        <label className="label mt-4 mb-1">ระบุ API</label>
+        <input
+          type="text"
+          className="input input-info"
+          placeholder="api/xxx"
+          value={api} 
+          onChange={(e) => setApi(e.target.value)}
         />
         <input
           type="file"
